@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  ParticleSystem
+//  GLParticles1
 //
-//  Created by Super User on 04.08.13.
-//  Copyright (c) 2013 KAjohansen. All rights reserved.
+//  Created by RRC on 5/2/13.
+//  Copyright (c) 2013 Ricardo Rendon Cepeda. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -12,10 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     return YES;
 }
 

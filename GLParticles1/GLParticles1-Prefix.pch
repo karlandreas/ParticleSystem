@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'ParticleSystem' target in the 'ParticleSystem' project
+// Prefix header for all source files of the 'GLParticles1' target in the 'GLParticles1' project
 //
 
 #import <Availability.h>

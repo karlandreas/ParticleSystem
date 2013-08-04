@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2216126E17AE464500710418"
-               BuildableName = "ParticleSystem.app"
-               BlueprintName = "ParticleSystem"
-               ReferencedContainer = "container:ParticleSystem.xcodeproj">
+               BlueprintIdentifier = "AE120EEF1732C2DA00244B0B"
+               BuildableName = "GLParticles1.app"
+               BlueprintName = "GLParticles1"
+               ReferencedContainer = "container:GLParticles1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2216126E17AE464500710418"
-            BuildableName = "ParticleSystem.app"
-            BlueprintName = "ParticleSystem"
-            ReferencedContainer = "container:ParticleSystem.xcodeproj">
+            BlueprintIdentifier = "AE120EEF1732C2DA00244B0B"
+            BuildableName = "GLParticles1.app"
+            BlueprintName = "GLParticles1"
+            ReferencedContainer = "container:GLParticles1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2216126E17AE464500710418"
-            BuildableName = "ParticleSystem.app"
-            BlueprintName = "ParticleSystem"
-            ReferencedContainer = "container:ParticleSystem.xcodeproj">
+            BlueprintIdentifier = "AE120EEF1732C2DA00244B0B"
+            BuildableName = "GLParticles1.app"
+            BlueprintName = "GLParticles1"
+            ReferencedContainer = "container:GLParticles1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2216126E17AE464500710418"
-            BuildableName = "ParticleSystem.app"
-            BlueprintName = "ParticleSystem"
-            ReferencedContainer = "container:ParticleSystem.xcodeproj">
+            BlueprintIdentifier = "AE120EEF1732C2DA00244B0B"
+            BuildableName = "GLParticles1.app"
+            BlueprintName = "GLParticles1"
+            ReferencedContainer = "container:GLParticles1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

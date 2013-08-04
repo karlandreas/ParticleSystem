@@ -1,9 +1,9 @@
 //
 //  main.m
-//  ParticleSystem
+//  GLParticles1
 //
-//  Created by Super User on 04.08.13.
-//  Copyright (c) 2013 KAjohansen. All rights reserved.
+//  Created by RRC on 5/2/13.
+//  Copyright (c) 2013 Ricardo Rendon Cepeda. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

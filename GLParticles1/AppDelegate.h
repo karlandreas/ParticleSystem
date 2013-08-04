@@ -3,7 +3,7 @@
 //  GLParticles1
 //
 //  Created by RRC on 5/2/13.
-//  Copyright (c) 2013 Ricardo Rendon Cepeda. All rights reserved.
+//  Copyright (c) 2013 Karl Andreas Johansen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -11,7 +11,6 @@
 typedef struct Particle
 {
     float       theta;
-    float       shade[3];
 }
 Particle;
 
@@ -19,7 +18,6 @@ typedef struct Emitter
 {
     Particle    particles[NUM_PARTICLES];
     int         k;
-    float       color[3];
 }
 Emitter;
 

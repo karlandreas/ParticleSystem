@@ -15,12 +15,10 @@
 
 // Attribute Handles
 @property (readwrite) GLint aTheta;
-@property (readwrite) GLint aShade;
 
 // Uniform Handles
 @property (readwrite) GLint uProjectionMatrix;
 @property (readwrite) GLint uK;
-@property (readwrite) GLint uColor;
 
 // Methods
 - (void)loadShader;

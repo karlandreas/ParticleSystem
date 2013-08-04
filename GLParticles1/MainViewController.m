@@ -50,23 +50,12 @@
 
 #pragma mark - Load Particle System
 
-- (float)randomFloatBetween:(float)min and:(float)max
-{
-    float range = max - min;
-    return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * range) + min;
-}
-
 - (void)loadParticles
 {
     for(int i=0; i<NUM_PARTICLES; i++)
     {
         // Assign each particle its theta value (in radians)
         emitter.particles[i].theta = GLKMathDegreesToRadians(i);
-        
-        // Assign a random shade offset to each particle, for each RGB channel
-        emitter.particles[i].shade[0] = [self randomFloatBetween:-0.25f and:0.25f];
-        emitter.particles[i].shade[1] = [self randomFloatBetween:-0.25f and:0.25f];
-        emitter.particles[i].shade[2] = [self randomFloatBetween:-0.25f and:0.25f];
     }
     
     // Create Vertex Buffer Object (VBO)
@@ -83,9 +72,6 @@
 - (void)loadEmitter
 {
     emitter.k = 4.0f;           // Constant k
-    emitter.color[0] = 0.76f;   // Color: R
-    emitter.color[1] = 0.12f;   // Color: G
-    emitter.color[2] = 0.34f;   // Color: B
 }
 
 #pragma mark - GLKViewDelegate
@@ -103,7 +89,6 @@
     // Uniforms
     glUniformMatrix4fv(self.emitterShader.uProjectionMatrix, 1, 0, projectionMatrix.m);
     glUniform1f(self.emitterShader.uK, emitter.k);
-    glUniform3f(self.emitterShader.uColor, emitter.color[0], emitter.color[1], emitter.color[2]);
     
     // Attributes
     glEnableVertexAttribArray(self.emitterShader.aTheta);
@@ -113,19 +98,10 @@
                           GL_FALSE,                                 // No fixed point scaling
                           sizeof(Particle),                         // No gaps in data
                           (void*)(offsetof(Particle, theta)));      // Start from "theta" offset within bound buffer
-    
-    glEnableVertexAttribArray(self.emitterShader.aShade);
-    glVertexAttribPointer(self.emitterShader.aShade,                // Set pointer
-                          3,                                        // Three components per particle
-                          GL_FLOAT,                                 // Data is floating point type
-                          GL_FALSE,                                 // No fixed point scaling
-                          sizeof(Particle),                         // No gaps in data
-                          (void*)(offsetof(Particle, shade)));      // Start from "shade" offset within bound buffer
-    
+        
     // Draw particles
     glDrawArrays(GL_POINTS, 0, NUM_PARTICLES);
     glDisableVertexAttribArray(self.emitterShader.aTheta);
-    glDisableVertexAttribArray(self.emitterShader.aShade);
 }
 
 @end

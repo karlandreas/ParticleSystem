@@ -18,12 +18,6 @@
 @end
 
 @implementation MainViewController
-{
-    // Instance variables
-    float   _timeCurrent;
-    float   _timeMax;
-    int     _timeDirection;
-}
 
 - (void)viewDidLoad
 {
@@ -36,11 +30,6 @@
     // Set up view
     GLKView* view = (GLKView*)self.view;
     view.context = context;
-    
-    // Initialize variables
-    _timeCurrent = 0.0f;
-    _timeMax = 3.0f;
-    _timeDirection = 1;
     
     // Load Shader
     [self loadShader];
@@ -115,7 +104,6 @@
     glUniformMatrix4fv(self.emitterShader.uProjectionMatrix, 1, 0, projectionMatrix.m);
     glUniform1f(self.emitterShader.uK, emitter.k);
     glUniform3f(self.emitterShader.uColor, emitter.color[0], emitter.color[1], emitter.color[2]);
-    glUniform1f(self.emitterShader.uTime, (_timeCurrent/_timeMax));
     
     // Attributes
     glEnableVertexAttribArray(self.emitterShader.aTheta);
@@ -138,16 +126,6 @@
     glDrawArrays(GL_POINTS, 0, NUM_PARTICLES);
     glDisableVertexAttribArray(self.emitterShader.aTheta);
     glDisableVertexAttribArray(self.emitterShader.aShade);
-}
-
-- (void)update
-{
-    if(_timeCurrent > _timeMax)
-        _timeDirection = -1;
-    else if(_timeCurrent < 0.0f)
-        _timeDirection = 1;
-    
-    _timeCurrent += _timeDirection * self.timeSinceLastUpdate;
 }
 
 @end

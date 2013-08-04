@@ -45,9 +45,6 @@
     // Load Shader
     [self loadShader];
     
-    // Load Texture
-    [self loadTexture:@"texture_32.png"];
-    
     // Load Particle System
     [self loadParticles];
     [self loadEmitter];
@@ -60,23 +57,6 @@
     self.emitterShader = [[EmitterShader alloc] init];
     [self.emitterShader loadShader];
     glUseProgram(self.emitterShader.program);
-}
-
-#pragma mark - Load Texture
-
-- (void)loadTexture:(NSString *)fileName
-{
-    NSDictionary* options = @{[NSNumber numberWithBool:YES] : GLKTextureLoaderOriginBottomLeft};
-    
-    NSError* error;
-    NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
-    GLKTextureInfo* texture = [GLKTextureLoader textureWithContentsOfFile:path options:options error:&error];
-    if(texture == nil)
-    {
-        NSLog(@"Error loading file: %@", [error localizedDescription]);
-    }
-    
-    glBindTexture(GL_TEXTURE_2D, texture.name);
 }
 
 #pragma mark - Load Particle System
@@ -127,10 +107,6 @@
     glClearColor(0.30f, 0.74f, 0.20f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    // Set the blending function (normal w/ premultiplied alpha)
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    
     // Create Projection Matrix
     float aspectRatio = view.frame.size.width / view.frame.size.height;
     GLKMatrix4 projectionMatrix = GLKMatrix4MakeScale(1.0f, aspectRatio, 1.0f);
@@ -140,7 +116,6 @@
     glUniform1f(self.emitterShader.uK, emitter.k);
     glUniform3f(self.emitterShader.uColor, emitter.color[0], emitter.color[1], emitter.color[2]);
     glUniform1f(self.emitterShader.uTime, (_timeCurrent/_timeMax));
-    glUniform1i(self.emitterShader.uTexture, 0);
     
     // Attributes
     glEnableVertexAttribArray(self.emitterShader.aTheta);

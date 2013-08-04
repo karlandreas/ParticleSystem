@@ -20,7 +20,6 @@
 // Uniform Handles
 @property (readwrite) GLint uProjectionMatrix;
 @property (readwrite) GLint uTime;
-@property (readwrite) GLint uTexture;
 @property (readwrite) GLint uK;
 @property (readwrite) GLint uColor;
 

@@ -22,7 +22,6 @@
 		AE120F181732C3C000244B0B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE120F171732C3C000244B0B /* MainViewController.m */; };
 		AE120F1E1732C77300244B0B /* EmitterShader.m in Sources */ = {isa = PBXBuildFile; fileRef = AE120F1D1732C77300244B0B /* EmitterShader.m */; };
 		AE120F211732C7F500244B0B /* ShaderProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE120F201732C7F500244B0B /* ShaderProcessor.mm */; };
-		AE120F311732CE2A00244B0B /* texture_32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE120F2E1732CE2A00244B0B /* texture_32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +50,6 @@
 		AE120F1D1732C77300244B0B /* EmitterShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterShader.m; sourceTree = "<group>"; };
 		AE120F1F1732C7F500244B0B /* ShaderProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProcessor.h; sourceTree = "<group>"; };
 		AE120F201732C7F500244B0B /* ShaderProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShaderProcessor.mm; sourceTree = "<group>"; };
-		AE120F2E1732CE2A00244B0B /* texture_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_32.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +107,6 @@
 				AE120F171732C3C000244B0B /* MainViewController.m */,
 				AE120F191732C4FF00244B0B /* EmitterTemplate.h */,
 				AE120F231732CA4100244B0B /* Shaders */,
-				AE120F2B1732CE2A00244B0B /* Resources */,
 				AE120EFA1732C2DA00244B0B /* Supporting Files */,
 			);
 			path = GLParticles1;
@@ -140,22 +137,6 @@
 				AE120F1B1732C67800244B0B /* Emitter.fsh */,
 			);
 			name = Shaders;
-			sourceTree = "<group>";
-		};
-		AE120F2B1732CE2A00244B0B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				AE120F2C1732CE2A00244B0B /* Textures */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		AE120F2C1732CE2A00244B0B /* Textures */ = {
-			isa = PBXGroup;
-			children = (
-				AE120F2E1732CE2A00244B0B /* texture_32.png */,
-			);
-			path = Textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +195,6 @@
 				AE120F081732C2DA00244B0B /* Default@2x.png in Resources */,
 				AE120F0A1732C2DA00244B0B /* Default-568h@2x.png in Resources */,
 				AE120F151732C38E00244B0B /* MainStoryboard.storyboard in Resources */,
-				AE120F311732CE2A00244B0B /* texture_32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

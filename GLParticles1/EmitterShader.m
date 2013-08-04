@@ -29,7 +29,6 @@
     // Uniforms
     self.uProjectionMatrix = glGetUniformLocation(self.program, "uProjectionMatrix");
     self.uTime = glGetUniformLocation(self.program, "uTime");
-    self.uTexture = glGetUniformLocation(self.program, "uTexture");
     self.uK = glGetUniformLocation(self.program, "uK");
     self.uColor = glGetUniformLocation(self.program, "uColor");
 }

@@ -23,7 +23,7 @@
     view.context = context;
     
     // Set up Emitter
-    self.emitter = [[EmitterObject alloc] initEmitterObject];
+    self.emitter = [[EmitterObject alloc] initWithTexture:@"texture_64.png"];
 }
 
 
@@ -35,6 +35,10 @@
     // Set the background color (green)
     glClearColor(0.53f, 0.81f, 0.92f, 1.00f);
     glClear(GL_COLOR_BUFFER_BIT);
+    
+    // Set the blending function (normal w/ premultiplied alpha)
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
     // Create Projection Matrix
     float aspectRatio = view.frame.size.width / view.frame.size.height;

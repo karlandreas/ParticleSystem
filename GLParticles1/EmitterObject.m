@@ -15,7 +15,7 @@
     float       _time;
 }
 
-- (id)initEmitterObject
+- (id)initWithTexture:(NSString*)fileName
 {
     if(self = [super init])
     {
@@ -26,6 +26,9 @@
         
         // Load Shader
         [self loadShader];
+        
+        // Load Texture
+        [self loadTexture:fileName];
         
         // Load Particle System
         [self loadParticleSystem];
@@ -42,8 +45,7 @@
     glUniform1f(self.shader.u_eRadius, self.emitter.eRadius);
     glUniform1f(self.shader.u_eVelocity, self.emitter.eVelocity);
     glUniform1f(self.shader.u_eDecay, self.emitter.eDecay);
-    glUniform1f(self.shader.u_eSize, self.emitter.eSize);
-    glUniform3f(self.shader.u_eColor, self.emitter.eColor.r, self.emitter.eColor.g, self.emitter.eColor.b);
+    glUniform1i(self.shader.u_Texture, 0);
     
     // Attributes
     glEnableVertexAttribArray(self.shader.a_pID);
@@ -128,8 +130,10 @@
     newEmitter.eRadius = 0.75f;                                     // Blast radius
     newEmitter.eVelocity = 3.00f;                                   // Explosion velocity
     newEmitter.eDecay = 2.00f;                                      // Explosion decay
-    newEmitter.eSize = 32.00f;                                      // Fragment size
-    newEmitter.eColor = GLKVector3Make(1.00f, 0.50f, 0.00f);        // Fragment color
+    newEmitter.eSizeStart = 32.00f;                                 // Fragment start size
+    newEmitter.eSizeEnd = 8.00f;                                    // Fragment end size
+    newEmitter.eColorStart = GLKVector3Make(1.00f, 0.50f, 0.00f);   // Fragment start color
+    newEmitter.eColorEnd = GLKVector3Make(0.25f, 0.00f, 0.00f);     // Fragment end color
     
     // 6
     // Set global factors
@@ -146,6 +150,24 @@
     glGenBuffers(1, &particleBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, particleBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(self.emitter.eParticles), self.emitter.eParticles, GL_STATIC_DRAW);
+}
+
+- (void)loadTexture:(NSString *)fileName
+{
+    NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithBool:YES],
+                             GLKTextureLoaderOriginBottomLeft,
+                             nil];
+    
+    NSError* error;
+    NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+    GLKTextureInfo* texture = [GLKTextureLoader textureWithContentsOfFile:path options:options error:&error];
+    if(texture == nil)
+    {
+        NSLog(@"Error loading file: %@", [error localizedDescription]);
+    }
+    
+    glBindTexture(GL_TEXTURE_2D, texture.name);
 }
 
 @end

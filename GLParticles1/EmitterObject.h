@@ -29,8 +29,10 @@ typedef struct Emitter
     float       eRadius;
     float       eVelocity;
     float       eDecay;
-    float       eSize;
-    GLKVector3  eColor;
+    float       eSizeStart;
+    float       eSizeEnd;
+    GLKVector3  eColorStart;
+    GLKVector3  eColorEnd;
 }
 Emitter;
 
@@ -39,7 +41,7 @@ Emitter;
 @property (assign) Emitter emitter;
 @property (strong) EmitterShader* shader;
 
-- (id)initEmitterObject;
+- (id)initWithTexture:(NSString *)fileName;
 - (void)renderWithProjection:(GLKMatrix4)projectionMatrix;
 - (void)updateLifeCycle:(float)timeElapsed;
 

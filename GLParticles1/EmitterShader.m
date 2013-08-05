@@ -39,6 +39,7 @@
     self.u_eDecay = glGetUniformLocation(self.program, "u_eDecay");
     self.u_eSize = glGetUniformLocation(self.program, "u_eSize");
     self.u_eColor = glGetUniformLocation(self.program, "u_eColor");
+    self.u_Texture = glGetUniformLocation(self.program, "u_Texture");
 }
 
 @end

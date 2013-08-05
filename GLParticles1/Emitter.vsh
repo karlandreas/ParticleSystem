@@ -18,10 +18,13 @@ static const char* EmitterVS = STRINGIFY
  uniform float       u_eRadius;
  uniform float       u_eVelocity;
  uniform float       u_eDecay;
- uniform float       u_eSize;
+ uniform float       u_eSizeStart;
+ uniform float       u_eSizeEnd;
  
  // Varying
  varying vec3        v_pColorOffset;
+ varying float       v_Growth;
+ varying float       v_Decay;
  
  void main(void)
 {
@@ -34,12 +37,18 @@ static const char* EmitterVS = STRINGIFY
     float growth = r / (u_eVelocity + a_pVelocityOffset);
     float decay = u_eDecay + a_pDecayOffset;
     
+    // Size
+    float s = 1.0;
+    
     // If blast is growing
     if(u_Time < growth)
     {
         float time = u_Time / growth;
         x = x * r * time;
         y = y * r * time;
+        
+        // 1
+        s = u_eSizeStart;
     }
     
     // Else if blast is decaying
@@ -48,14 +57,21 @@ static const char* EmitterVS = STRINGIFY
         float time = (u_Time - growth) / decay;
         x = (x * r) + (u_Gravity.x * time);
         y = (y * r) + (u_Gravity.y * time);
+        
+        // 2
+        s = mix(u_eSizeStart, u_eSizeEnd, time);
     }
     
-    // Required OpenGLES 2.0 outputs
+    // Required OpenGL ES 2.0 outputs
     gl_Position = u_ProjectionMatrix * vec4(x, y, 0.0, 1.0);
-    gl_PointSize = max(0.0, (u_eSize + a_pSizeOffset));
+    
+    // 3
+    gl_PointSize = max(0.0, (s + a_pSizeOffset));
     
     // Fragment Shader outputs
     v_pColorOffset = a_pColorOffset;
+    v_Growth = growth;
+    v_Decay = decay;
 }
  
 );

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221B19AC17AF96760021D8D1 /* EmitterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 221B19AB17AF96760021D8D1 /* EmitterObject.m */; };
+		221B19B717AF99B50021D8D1 /* ShaderProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 221B19B217AF99B50021D8D1 /* ShaderProcessor.mm */; };
+		221B19B817AF99B50021D8D1 /* texture_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 221B19B417AF99B50021D8D1 /* texture_16.png */; };
+		221B19B917AF99B50021D8D1 /* texture_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 221B19B517AF99B50021D8D1 /* texture_32.png */; };
+		221B19BA17AF99B50021D8D1 /* texture_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 221B19B617AF99B50021D8D1 /* texture_64.png */; };
+		221B19BD17AF9A180021D8D1 /* EmitterShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 221B19BC17AF9A180021D8D1 /* EmitterShader.m */; };
 		AE120EF41732C2DA00244B0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE120EF31732C2DA00244B0B /* UIKit.framework */; };
 		AE120EF61732C2DA00244B0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE120EF51732C2DA00244B0B /* Foundation.framework */; };
 		AE120EF81732C2DA00244B0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE120EF71732C2DA00244B0B /* CoreGraphics.framework */; };
@@ -23,6 +29,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221B19AA17AF96760021D8D1 /* EmitterObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterObject.h; sourceTree = "<group>"; };
+		221B19AB17AF96760021D8D1 /* EmitterObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterObject.m; sourceTree = "<group>"; };
+		221B19AD17AF98AC0021D8D1 /* Emitter.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Emitter.vsh; sourceTree = "<group>"; };
+		221B19AE17AF98DB0021D8D1 /* Emitter.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Emitter.fsh; sourceTree = "<group>"; };
+		221B19B117AF99B50021D8D1 /* ShaderProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProcessor.h; sourceTree = "<group>"; };
+		221B19B217AF99B50021D8D1 /* ShaderProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShaderProcessor.mm; sourceTree = "<group>"; };
+		221B19B417AF99B50021D8D1 /* texture_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_16.png; sourceTree = "<group>"; };
+		221B19B517AF99B50021D8D1 /* texture_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_32.png; sourceTree = "<group>"; };
+		221B19B617AF99B50021D8D1 /* texture_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_64.png; sourceTree = "<group>"; };
+		221B19BB17AF9A180021D8D1 /* EmitterShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterShader.h; sourceTree = "<group>"; };
+		221B19BC17AF9A180021D8D1 /* EmitterShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterShader.m; sourceTree = "<group>"; };
 		AE120EF01732C2DA00244B0B /* GLParticles1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLParticles1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE120EF31732C2DA00244B0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE120EF51732C2DA00244B0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,6 +76,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221B19AF17AF99B50021D8D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				221B19B017AF99B50021D8D1 /* ShaderProcessor */,
+				221B19B317AF99B50021D8D1 /* Textures */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		221B19B017AF99B50021D8D1 /* ShaderProcessor */ = {
+			isa = PBXGroup;
+			children = (
+				221B19B117AF99B50021D8D1 /* ShaderProcessor.h */,
+				221B19B217AF99B50021D8D1 /* ShaderProcessor.mm */,
+			);
+			path = ShaderProcessor;
+			sourceTree = "<group>";
+		};
+		221B19B317AF99B50021D8D1 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				221B19B417AF99B50021D8D1 /* texture_16.png */,
+				221B19B517AF99B50021D8D1 /* texture_32.png */,
+				221B19B617AF99B50021D8D1 /* texture_64.png */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
 		AE120EE71732C2DA00244B0B = {
 			isa = PBXGroup;
 			children = (
@@ -91,11 +136,18 @@
 		AE120EF91732C2DA00244B0B /* GLParticles1 */ = {
 			isa = PBXGroup;
 			children = (
+				AE120F141732C38E00244B0B /* MainStoryboard.storyboard */,
 				AE120F021732C2DA00244B0B /* AppDelegate.h */,
 				AE120F031732C2DA00244B0B /* AppDelegate.m */,
-				AE120F141732C38E00244B0B /* MainStoryboard.storyboard */,
 				AE120F161732C3C000244B0B /* MainViewController.h */,
 				AE120F171732C3C000244B0B /* MainViewController.m */,
+				221B19AD17AF98AC0021D8D1 /* Emitter.vsh */,
+				221B19AE17AF98DB0021D8D1 /* Emitter.fsh */,
+				221B19AA17AF96760021D8D1 /* EmitterObject.h */,
+				221B19AB17AF96760021D8D1 /* EmitterObject.m */,
+				221B19BB17AF9A180021D8D1 /* EmitterShader.h */,
+				221B19BC17AF9A180021D8D1 /* EmitterShader.m */,
+				221B19AF17AF99B50021D8D1 /* Resources */,
 				AE120EFA1732C2DA00244B0B /* Supporting Files */,
 			);
 			path = GLParticles1;
@@ -166,10 +218,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221B19B817AF99B50021D8D1 /* texture_16.png in Resources */,
 				AE120EFE1732C2DA00244B0B /* InfoPlist.strings in Resources */,
 				AE120F061732C2DA00244B0B /* Default.png in Resources */,
+				221B19BA17AF99B50021D8D1 /* texture_64.png in Resources */,
 				AE120F081732C2DA00244B0B /* Default@2x.png in Resources */,
 				AE120F0A1732C2DA00244B0B /* Default-568h@2x.png in Resources */,
+				221B19B917AF99B50021D8D1 /* texture_32.png in Resources */,
 				AE120F151732C38E00244B0B /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +239,9 @@
 				AE120F001732C2DA00244B0B /* main.m in Sources */,
 				AE120F041732C2DA00244B0B /* AppDelegate.m in Sources */,
 				AE120F181732C3C000244B0B /* MainViewController.m in Sources */,
+				221B19BD17AF9A180021D8D1 /* EmitterShader.m in Sources */,
+				221B19B717AF99B50021D8D1 /* ShaderProcessor.mm in Sources */,
+				221B19AC17AF96760021D8D1 /* EmitterObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

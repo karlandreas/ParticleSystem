@@ -20,8 +20,6 @@
 		AE120F131732C35A00244B0B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE120F121732C35A00244B0B /* GLKit.framework */; };
 		AE120F151732C38E00244B0B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE120F141732C38E00244B0B /* MainStoryboard.storyboard */; };
 		AE120F181732C3C000244B0B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE120F171732C3C000244B0B /* MainViewController.m */; };
-		AE120F1E1732C77300244B0B /* EmitterShader.m in Sources */ = {isa = PBXBuildFile; fileRef = AE120F1D1732C77300244B0B /* EmitterShader.m */; };
-		AE120F211732C7F500244B0B /* ShaderProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE120F201732C7F500244B0B /* ShaderProcessor.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,13 +41,6 @@
 		AE120F141732C38E00244B0B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AE120F161732C3C000244B0B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		AE120F171732C3C000244B0B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		AE120F191732C4FF00244B0B /* EmitterTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmitterTemplate.h; sourceTree = "<group>"; };
-		AE120F1A1732C66D00244B0B /* Emitter.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; path = Emitter.vsh; sourceTree = "<group>"; };
-		AE120F1B1732C67800244B0B /* Emitter.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; path = Emitter.fsh; sourceTree = "<group>"; };
-		AE120F1C1732C77300244B0B /* EmitterShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterShader.h; sourceTree = "<group>"; };
-		AE120F1D1732C77300244B0B /* EmitterShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterShader.m; sourceTree = "<group>"; };
-		AE120F1F1732C7F500244B0B /* ShaderProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProcessor.h; sourceTree = "<group>"; };
-		AE120F201732C7F500244B0B /* ShaderProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShaderProcessor.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +96,6 @@
 				AE120F141732C38E00244B0B /* MainStoryboard.storyboard */,
 				AE120F161732C3C000244B0B /* MainViewController.h */,
 				AE120F171732C3C000244B0B /* MainViewController.m */,
-				AE120F191732C4FF00244B0B /* EmitterTemplate.h */,
-				AE120F231732CA4100244B0B /* Shaders */,
 				AE120EFA1732C2DA00244B0B /* Supporting Files */,
 			);
 			path = GLParticles1;
@@ -124,19 +113,6 @@
 				AE120F091732C2DA00244B0B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AE120F231732CA4100244B0B /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				AE120F1F1732C7F500244B0B /* ShaderProcessor.h */,
-				AE120F201732C7F500244B0B /* ShaderProcessor.mm */,
-				AE120F1C1732C77300244B0B /* EmitterShader.h */,
-				AE120F1D1732C77300244B0B /* EmitterShader.m */,
-				AE120F1A1732C66D00244B0B /* Emitter.vsh */,
-				AE120F1B1732C67800244B0B /* Emitter.fsh */,
-			);
-			name = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +184,6 @@
 				AE120F001732C2DA00244B0B /* main.m in Sources */,
 				AE120F041732C2DA00244B0B /* AppDelegate.m in Sources */,
 				AE120F181732C3C000244B0B /* MainViewController.m in Sources */,
-				AE120F1E1732C77300244B0B /* EmitterShader.m in Sources */,
-				AE120F211732C7F500244B0B /* ShaderProcessor.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

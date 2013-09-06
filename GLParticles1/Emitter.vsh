@@ -2,30 +2,31 @@
 
 static const char* EmitterVS = STRINGIFY
 (
- 
- // Attributes
- attribute float     a_pID;
- attribute float     a_pRadiusOffset;
- attribute float     a_pVelocityOffset;
- attribute float     a_pDecayOffset;
- attribute float     a_pSizeOffset;
- attribute vec3      a_pColorOffset;
- 
- // Uniforms
- uniform mat4        u_ProjectionMatrix;
- uniform vec2        u_Gravity;
- uniform float       u_Time;
- uniform float       u_eRadius;
- uniform float       u_eVelocity;
- uniform float       u_eDecay;
- uniform float       u_eSizeStart;
- uniform float       u_eSizeEnd;
- 
- // Varying
- varying vec3        v_pColorOffset;
- varying float       v_Growth;
- varying float       v_Decay;
- 
+
+// Attributes
+attribute float     a_pID;
+attribute float     a_pRadiusOffset;
+attribute float     a_pVelocityOffset;
+attribute float     a_pDecayOffset;
+attribute float     a_pSizeOffset;
+attribute vec3      a_pColorOffset;
+
+// Uniforms
+uniform mat4        u_ProjectionMatrix;
+uniform vec2        u_Gravity;
+uniform float       u_Time;
+uniform vec2        u_ePosition;
+uniform float       u_eRadius;
+uniform float       u_eVelocity;
+uniform float       u_eDecay;
+uniform float       u_eSizeStart;
+uniform float       u_eSizeEnd;
+
+// Varying
+varying vec3        v_pColorOffset;
+varying float       v_Growth;
+varying float       v_Decay;
+
  void main(void)
 {
     // Convert polar angle to cartesian coordinates and calculate radius
@@ -46,8 +47,6 @@ static const char* EmitterVS = STRINGIFY
         float time = u_Time / growth;
         x = x * r * time;
         y = y * r * time;
-        
-        // 1
         s = u_eSizeStart;
     }
     
@@ -57,15 +56,12 @@ static const char* EmitterVS = STRINGIFY
         float time = (u_Time - growth) / decay;
         x = (x * r) + (u_Gravity.x * time);
         y = (y * r) + (u_Gravity.y * time);
-        
-        // 2
         s = mix(u_eSizeStart, u_eSizeEnd, time);
     }
     
     // Required OpenGL ES 2.0 outputs
-    gl_Position = u_ProjectionMatrix * vec4(x, y, 0.0, 1.0);
-    
-    // 3
+    vec2 position = vec2(x,y) + u_ePosition;
+    gl_Position = u_ProjectionMatrix * vec4(position, 0.0, 1.0);
     gl_PointSize = max(0.0, (s + a_pSizeOffset));
     
     // Fragment Shader outputs
@@ -73,5 +69,5 @@ static const char* EmitterVS = STRINGIFY
     v_Growth = growth;
     v_Decay = decay;
 }
- 
+
 );

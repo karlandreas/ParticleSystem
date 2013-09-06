@@ -7,11 +7,8 @@
 //
 
 #import <GLKit/GLKit.h>
-#import "EmitterObject.h"
 
 @interface MainViewController : GLKViewController
 
-// Properties
-@property (strong) EmitterObject* emitter;
 
 @end

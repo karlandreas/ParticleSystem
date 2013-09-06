@@ -34,12 +34,15 @@
     self.u_ProjectionMatrix = glGetUniformLocation(self.program, "u_ProjectionMatrix");
     self.u_Gravity = glGetUniformLocation(self.program, "u_Gravity");
     self.u_Time = glGetUniformLocation(self.program, "u_Time");
+    self.u_Texture = glGetUniformLocation(self.program, "u_Texture");
+    self.u_ePosition = glGetUniformLocation(self.program, "u_ePosition");
     self.u_eRadius = glGetUniformLocation(self.program, "u_eRadius");
     self.u_eVelocity = glGetUniformLocation(self.program, "u_eVelocity");
     self.u_eDecay = glGetUniformLocation(self.program, "u_eDecay");
-    self.u_eSize = glGetUniformLocation(self.program, "u_eSize");
-    self.u_eColor = glGetUniformLocation(self.program, "u_eColor");
-    self.u_Texture = glGetUniformLocation(self.program, "u_Texture");
+    self.u_eSizeStart = glGetUniformLocation(self.program, "u_eSizeStart");
+    self.u_eSizeEnd = glGetUniformLocation(self.program, "u_eSizeEnd");
+    self.u_eColorStart = glGetUniformLocation(self.program, "u_eColorStart");
+    self.u_eColorEnd = glGetUniformLocation(self.program, "u_eColorEnd");
 }
 
 @end
